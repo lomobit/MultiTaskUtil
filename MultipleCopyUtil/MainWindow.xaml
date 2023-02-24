@@ -6,12 +6,17 @@
         xmlns:Controls="clr-namespace:MultipleCopyUtil.Controls"
         xmlns:local="clr-namespace:MultipleCopyUtil"
         mc:Ignorable="d"
-        Title="Множественное копирование" Height="223" Width="492" ResizeMode="CanMinimize"
+        Title="MultiUtil" Height="223" Width="492" ResizeMode="CanMinimize"
         Icon="/Images/Icons/copy-icon.ico">
     <TabControl TabStripPlacement="Left" Margin="0, 0, 0, 0">
         <TabItem Name="copyTab" Header="Копирование">
             <TabItem.Content>
                 <Controls:CopyTab />
+            </TabItem.Content>
+        </TabItem>
+        <TabItem Name="renameTab" Header="Переименование">
+            <TabItem.Content>
+                <Controls:RenameTab />
             </TabItem.Content>
         </TabItem>
     </TabControl>
