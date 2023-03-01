@@ -8,6 +8,9 @@
         public MainWindow()
         {
             InitializeComponent();
+
+            var appVersion = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
+            lblCursorPosition.Text = $"Version: {appVersion.Major}.{appVersion.Minor}.{appVersion.Build}";
         }
     }
 }

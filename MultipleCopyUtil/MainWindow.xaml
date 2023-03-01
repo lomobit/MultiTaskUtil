@@ -6,18 +6,32 @@
         xmlns:Controls="clr-namespace:MultipleCopyUtil.Controls"
         xmlns:local="clr-namespace:MultipleCopyUtil"
         mc:Ignorable="d"
-        Title="MultiUtil" Height="223" Width="492" ResizeMode="CanMinimize"
+        Title="MultiUtil" Height="350" Width="500" ResizeMode="CanMinimize"
         Icon="/Images/Icons/copy-icon.ico">
-    <TabControl TabStripPlacement="Left" Margin="0, 0, 0, 0">
-        <TabItem Name="copyTab" Header="Копирование">
-            <TabItem.Content>
-                <Controls:CopyTab />
-            </TabItem.Content>
-        </TabItem>
-        <TabItem Name="renameTab" Header="Переименование">
-            <TabItem.Content>
-                <Controls:RenameTab />
-            </TabItem.Content>
-        </TabItem>
-    </TabControl>
+    <Grid>
+        <TabControl TabStripPlacement="Left" Margin="0, 0, 0, 20">
+            <TabItem Name="copyTab" Header="Копирование">
+                <TabItem.Content>
+                    <Controls:CopyTab />
+                </TabItem.Content>
+            </TabItem>
+            <TabItem Name="renameTab" Header="Переименование">
+                <TabItem.Content>
+                    <Controls:RenameTab />
+                </TabItem.Content>
+            </TabItem>
+        </TabControl>
+        <StatusBar
+            Margin="0, 0, 0, 0"
+            Height="20"
+            Width="500"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
+            FontFamily="Palatino Linotype">
+            <StatusBarItem>
+                <TextBlock
+                    Name="lblCursorPosition"/>
+            </StatusBarItem>
+        </StatusBar>
+    </Grid>
 </Window>

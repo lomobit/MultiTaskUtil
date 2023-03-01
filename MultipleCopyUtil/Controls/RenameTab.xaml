@@ -16,6 +16,7 @@
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Content="X"
+                Cursor="Hand"
                 FontFamily="Palatino Linotype" />
             <Button
                 x:Name="Btn_ChooseDirectoryPath"
@@ -25,14 +26,17 @@
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Content="Выбрать файлы/папки"
+                Cursor="Hand"
                 FontFamily="Palatino Linotype" />
             <Label
+                x:Name="Lbl_ChooseDirectoryPath"
                 Content="Файлы/папки не выбраны"
                 Margin="185, 0, 0, 0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 FontFamily="Palatino Linotype" />
             <RadioButton
+                x:Name="Rbtn_Directories"
                 GroupName="FileDirectoryGroup"
                 Content="Папки"
                 HorizontalAlignment="Left"
@@ -42,6 +46,7 @@
                 FontFamily="Palatino Linotype"
                 IsChecked="True"/>
             <RadioButton
+                x:Name="Rbtn_Files"
                 GroupName="FileDirectoryGroup"
                 Content="Файлы"
                 HorizontalAlignment="Left"
@@ -50,39 +55,71 @@
                 Margin="40, 55, 0, 0"
                 FontFamily="Palatino Linotype" />
         </Grid>
-        <Grid Margin="10, 160, 0, 0">
+        <Grid Margin="10, 100, 0, 0">
             <RadioButton
-                x:Name=""
+                x:Name="Rbtn_Prefix"
                 GroupName="RenameType"
                 Content="Добавить префикс"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Width="140"
-                Margin="0, 25, 0, 0"
+                Margin="40, 0, 0, 0"
                 FontFamily="Palatino Linotype" />
             <TextBox
-                x:Name="myTextBox"
+                x:Name="Txt_Prefix"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Width="140"
-                Margin="150, 25, 0, 0" 
+                Margin="190, 0, 0, 0" 
                 FontFamily="Palatino Linotype" />
             <RadioButton
+                x:Name="Rbtn_Postfix"
                 GroupName="RenameType"
                 Content="Добавить постфикс"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Width="140"
-                Margin="0, 45, 0, 0"
+                Margin="40, 20, 0, 0"
                 FontFamily="Palatino Linotype"/>
+            <TextBox
+                x:Name="Txt_Postfix"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Width="140"
+                Margin="190, 20, 0, 0" 
+                FontFamily="Palatino Linotype" />
             <RadioButton
+                x:Name="Rbtn_Replace"
                 GroupName="RenameType"
                 Content="Замена"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Width="140"
-                Margin="0, 65, 0, 0"
+                Margin="40, 40, 0, 0"
                 FontFamily="Palatino Linotype" />
+            <TextBox
+                x:Name="Txt_Find"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Width="140"
+                Margin="190, 40, 0, 0" 
+                FontFamily="Palatino Linotype" />
+            <TextBox
+                x:Name="Txt_Replace"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Width="140"
+                Margin="190, 60, 0, 0" 
+                FontFamily="Palatino Linotype" />
+            <Button 
+                Margin="40, 90, 0, 0"
+                Content="Переименовать"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Height="42"
+                Width="176"
+                Cursor="Hand"
+                FontFamily="Palatino Linotype"/>
         </Grid>
     </Grid>
 </UserControl>
