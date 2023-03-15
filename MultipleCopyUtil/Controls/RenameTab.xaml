@@ -1,0 +1,230 @@
+﻿<UserControl x:Class="MultipleCopyUtil.Controls.RenameTab"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MultipleCopyUtil.Controls"
+             mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid Margin="10, 10, 0, 0">
+            <Button
+                x:Name="Btn_RemoveDirectoryPath"
+                Click="Btn_RemoveDirectoryPath_Click"
+                Height="24"
+                Width="24"
+                Margin="10, 0, 0, 0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="X"
+                Cursor="Hand"
+                FontFamily="Palatino Linotype" />
+            <Button
+                x:Name="Btn_ChooseDirectoryPath"
+                Click="Btn_ChooseDirectoryPath_Click"
+                Height="24"
+                Width="140"
+                Margin="40, 0, 0, 0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Выбрать папки"
+                Cursor="Hand"
+                FontFamily="Palatino Linotype" />
+            <Label
+                x:Name="Lbl_ChooseDirectoryPath"
+                Margin="185, 0, 0, 0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                FontFamily="Palatino Linotype" />
+            <RadioButton
+                x:Name="Rbtn_Directories"
+                Checked="Rbtn_Directories_Checked"
+                GroupName="FileDirectoryGroup"
+                Content="Папки"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Width="140"
+                Margin="40, 35, 0, 0"
+                FontFamily="Palatino Linotype"
+                IsChecked="True"/>
+            <RadioButton
+                x:Name="Rbtn_Files"
+                Checked="Rbtn_Files_Checked"
+                GroupName="FileDirectoryGroup"
+                Content="Файлы"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Width="140"
+                Margin="40, 55, 0, 0"
+                FontFamily="Palatino Linotype" />
+        </Grid>
+        <Grid Margin="10, 100, 0, 0">
+            <RadioButton
+                x:Name="Rbtn_Prefix"
+                Checked="Rbtn_Prefix_Checked"
+                GroupName="RenameType"
+                Content="Добавить префикс"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Width="140"
+                Margin="40, 0, 0, 0"
+                FontFamily="Palatino Linotype" />
+            <TextBox
+                x:Name="Txt_Prefix"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Width="140"
+                Margin="190, 0, 0, 0" 
+                FontFamily="Palatino Linotype"
+                IsEnabled="False">
+                <TextBox.Style>
+                    <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                        <Style.Resources>
+                            <VisualBrush x:Key="PrefixBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+                                <VisualBrush.Visual>
+                                    <Label Content="Префикс" Foreground="LightGray" FontFamily="Palatino Linotype"/>
+                                </VisualBrush.Visual>
+                            </VisualBrush>
+                        </Style.Resources>
+                        <Style.Triggers>
+                            <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
+                                <Setter Property="Background" Value="{StaticResource PrefixBrush}" />
+                            </Trigger>
+                            <Trigger Property="Text" Value="{x:Null}">
+                                <Setter Property="Background" Value="{StaticResource PrefixBrush}" />
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="True">
+                                <Setter Property="Background" Value="White" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBox.Style>
+            </TextBox>
+            <RadioButton
+                x:Name="Rbtn_Postfix"
+                Checked="Rbtn_Postfix_Checked"
+                GroupName="RenameType"
+                Content="Добавить постфикс"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Width="140"
+                Margin="40, 20, 0, 0"
+                FontFamily="Palatino Linotype"/>
+            <TextBox
+                x:Name="Txt_Postfix"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Width="140"
+                Margin="190, 20, 0, 0" 
+                FontFamily="Palatino Linotype"
+                IsEnabled="False">
+                <TextBox.Style>
+                    <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                        <Style.Resources>
+                            <VisualBrush x:Key="PostfixBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+                                <VisualBrush.Visual>
+                                    <Label Content="Постфикс" Foreground="LightGray" FontFamily="Palatino Linotype"/>
+                                </VisualBrush.Visual>
+                            </VisualBrush>
+                        </Style.Resources>
+                        <Style.Triggers>
+                            <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
+                                <Setter Property="Background" Value="{StaticResource PostfixBrush}" />
+                            </Trigger>
+                            <Trigger Property="Text" Value="{x:Null}">
+                                <Setter Property="Background" Value="{StaticResource PostfixBrush}" />
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="True">
+                                <Setter Property="Background" Value="White" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBox.Style>
+            </TextBox>
+            <RadioButton
+                x:Name="Rbtn_Replace"
+                Checked="Rbtn_Replace_Checked"
+                GroupName="RenameType"
+                Content="Замена"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Width="140"
+                Margin="40, 40, 0, 0"
+                FontFamily="Palatino Linotype"/>
+            <TextBox
+                x:Name="Txt_Find"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Width="140"
+                Margin="190, 40, 0, 0" 
+                FontFamily="Palatino Linotype"
+                IsEnabled="False">
+                <TextBox.Style>
+                    <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                        <Style.Resources>
+                            <VisualBrush x:Key="FindBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+                                <VisualBrush.Visual>
+                                    <Label Content="Найти" Foreground="LightGray" FontFamily="Palatino Linotype"/>
+                                </VisualBrush.Visual>
+                            </VisualBrush>
+                        </Style.Resources>
+                        <Style.Triggers>
+                            <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
+                                <Setter Property="Background" Value="{StaticResource FindBrush}" />
+                            </Trigger>
+                            <Trigger Property="Text" Value="{x:Null}">
+                                <Setter Property="Background" Value="{StaticResource FindBrush}" />
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="True">
+                                <Setter Property="Background" Value="White" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBox.Style>
+            </TextBox>
+            <TextBox
+                x:Name="Txt_Replace"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Width="140"
+                Margin="190, 60, 0, 0" 
+                FontFamily="Palatino Linotype"
+                IsEnabled="False">
+                <TextBox.Style>
+                    <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                        <Style.Resources>
+                            <VisualBrush x:Key="ReplaceBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+                                <VisualBrush.Visual>
+                                    <Label Content="Заменить" Foreground="LightGray" FontFamily="Palatino Linotype"/>
+                                </VisualBrush.Visual>
+                            </VisualBrush>
+                        </Style.Resources>
+                        <Style.Triggers>
+                            <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
+                                <Setter Property="Background" Value="{StaticResource ReplaceBrush}" />
+                            </Trigger>
+                            <Trigger Property="Text" Value="{x:Null}">
+                                <Setter Property="Background" Value="{StaticResource ReplaceBrush}" />
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="True">
+                                <Setter Property="Background" Value="White" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBox.Style>
+            </TextBox>
+            <Button
+                x:Name="Btn_Rename"
+                Click="Btn_Rename_Click"
+                Margin="40, 90, 0, 0"
+                Content="Переименовать"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Height="42"
+                Width="176"
+                Cursor="Hand"
+                FontFamily="Palatino Linotype"
+                IsEnabled="False"/>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -3,83 +3,35 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Controls="clr-namespace:MultipleCopyUtil.Controls"
         xmlns:local="clr-namespace:MultipleCopyUtil"
         mc:Ignorable="d"
-        Title="Множественное копирование" Height="223" Width="492" ResizeMode="CanMinimize"
+        Title="MultiUtil" Height="350" Width="500" ResizeMode="CanMinimize"
         Icon="/Images/Icons/copy-icon.ico">
     <Grid>
-        <Button x:Name="Btn_ChooseDirectoryPath"
-                Content="Выбрать папки"
-                HorizontalAlignment="Left"
-                Margin="46,16,0,0"
-                VerticalAlignment="Top"
-                Height="24"
-                Width="113"
-                Cursor="Hand"
-                FontFamily="Palatino Linotype"
-                Click="Btn_ChooseDirectoryPath_Click" />
-        <Button x:Name="Btn_ChooseFilePath"
-                Content="Выбрать файлы"
-                HorizontalAlignment="Left"
-                Margin="46,54,0,0"
-                VerticalAlignment="Top"
-                Height="24"
-                Width="113"
-                Cursor="Hand"
-                FontFamily="Palatino Linotype"
-                Click="Btn_ChooseFilePath_Click" />
-        <Label x:Name="Lbl_ChooseDirectoryPath"
-               Content=""
-               HorizontalAlignment="Left"
-               Height="26"
-               Margin="162,16,0,0"
-               VerticalAlignment="Top"
-               Width="310"
-               FontFamily="Palatino Linotype" />
-        <Label x:Name="Lbl_ChooseFilePath"
-               Content=""
-               HorizontalAlignment="Left"
-               Height="26"
-               Margin="162,54,0,0"
-               VerticalAlignment="Top"
-               Width="310"
-               FontFamily="Palatino Linotype" />
-        <Button x:Name="Btn_CopyFileToDirectories"
-                Content="Копировать во все папки"
-                HorizontalAlignment="Left"
-                Margin="46,126,0,0"
-                VerticalAlignment="Top"
-                Height="42"
-                Width="176"
-                Cursor="Hand"
-                FontFamily="Palatino Linotype"
-                Click="Btn_CopyFileToDirectories_Click"
-                IsEnabled="False" />
-        <Button x:Name="Btn_ClearChoosedDirectoryPath"
-                Content="X"
-                HorizontalAlignment="Left"
-                Margin="18,16,0,0"
-                VerticalAlignment="Top"
-                Height="24"
-                Width="23"
-                Cursor="Hand"
-                FontFamily="Palatino Linotype"
-                Click="Btn_ClearChoosedDirectoryPath_Click" />
-        <Button x:Name="Btn_ClearChooseFilePath"
-                Content="X"
-                HorizontalAlignment="Left"
-                Margin="18,54,0,0"
-                VerticalAlignment="Top"
-                Height="24" Width="23"
-                Cursor="Hand"
-                FontFamily="Palatino Linotype"
-                Click="Btn_ClearChooseFilePath_Click" />
-        <CheckBox x:Name="Chk_OverwriteFile"
-                  Content="Перезаписать файлы, если существуют"
-                  HorizontalAlignment="Left"
-                  Margin="46,100,0,0"
-                  VerticalAlignment="Top"
-                  Width="247"
-                  FontFamily="Palatino Linotype" />
+        <TabControl TabStripPlacement="Left" Margin="0, 0, 0, 20">
+            <TabItem Name="copyTab" Header="Копирование">
+                <TabItem.Content>
+                    <Controls:CopyTab />
+                </TabItem.Content>
+            </TabItem>
+            <TabItem Name="renameTab" Header="Переименование">
+                <TabItem.Content>
+                    <Controls:RenameTab />
+                </TabItem.Content>
+            </TabItem>
+        </TabControl>
+        <StatusBar
+            Margin="0, 0, 0, 0"
+            Height="20"
+            Width="500"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
+            FontFamily="Palatino Linotype">
+            <StatusBarItem>
+                <TextBlock
+                    Name="lblCursorPosition"/>
+            </StatusBarItem>
+        </StatusBar>
     </Grid>
 </Window>
